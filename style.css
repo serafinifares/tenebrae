@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Gentium";
+  font-weight: normal;
+  src: url("GentiumBookPlus-Regular.ttf");
+}
+
+@font-face {
+  font-family: Garamond;
+  font-weight: normal;
+  src: url("EBGaramond-Regular.ttf");
+}
+
+@font-face {
+  font-family: Garamond;
+  font-weight: bold;
+  src: url("EBGaramond-SemiBold.ttf");
+}
+
+:root {
+  --spacing: 40px;
+  --title-font-size: 140px;
+  --heading-font-size: 25px;
+  --body-font-size: 18px;
+}
+
+body {
+  font-family: "Gentium";
+  margin: 0;
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing);
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  height: 245px;
+}
+
+.logo-container img {
+  height: 100%;
+  max-width: 100%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container h1 {
+  font-family: "Gentium";
+  font-size: var(--title-font-size);
+}
+
+.header-container p {
+  font-family: "Garamond";
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: var(--heading-font-size);
+}
+
+section > h2 {
+  font-family: "Garamond";
+  font-weight: bold;
+  font-size: var(--heading-font-size);
+  margin-bottom: calc(var(--spacing) / 2);
+}
+
+.archive-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+}
+
+.archive-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-item img {
+  height: 300px;
+  border-bottom: 1px solid #000;
+}
+
+.archive-item a {
+  margin: 5px;
+  font-size: var(--body-font-size);
+  text-decoration: underline;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: var(--spacing);
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .header-container {
+    padding: 0;
+  }
+
+  .header-container h1 {
+    text-align: center;
+  }
+
+  .header-container p {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  section > h2 {
+    text-align: center;
+  }
+
+  .archive-list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --title-font-size: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --title-font-size: 60px;
+    --heading-font-size: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  .logo-container img {
+    height: 120px;
+    max-width: 100%;
+  }
+
+  .logo-container {
+    height: 120px;
+  }
+}
